@@ -19,7 +19,8 @@
 		342183F829205C7400F378D2 /* SetExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F729205C7400F378D2 /* SetExperienceView.swift */; };
 		342183FA29205CAC00F378D2 /* SetDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F929205CAC00F378D2 /* SetDiscoveryView.swift */; };
 		342183FC29205DB300F378D2 /* SetFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183FB29205DB300F378D2 /* SetFriendsView.swift */; };
-		9BA784C42920519600A5DF04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA784C32920519600A5DF04 /* Home.swift */; };
+		9BA784C42920519600A5DF04 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA784C32920519600A5DF04 /* HomeView.swift */; };
+		9BFCE5D4292064E500D5AD30 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFCE5D3292064E500D5AD30 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,8 @@
 		342183F729205C7400F378D2 /* SetExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExperienceView.swift; sourceTree = "<group>"; };
 		342183F929205CAC00F378D2 /* SetDiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDiscoveryView.swift; sourceTree = "<group>"; };
 		342183FB29205DB300F378D2 /* SetFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFriendsView.swift; sourceTree = "<group>"; };
-		9BA784C32920519600A5DF04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9BA784C32920519600A5DF04 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9BFCE5D3292064E500D5AD30 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 				342183F729205C7400F378D2 /* SetExperienceView.swift */,
 				342183F929205CAC00F378D2 /* SetDiscoveryView.swift */,
 				342183FB29205DB300F378D2 /* SetFriendsView.swift */,
-				9BA784C32920519600A5DF04 /* Home.swift */,
+				9BA784C32920519600A5DF04 /* HomeView.swift */,
+				9BFCE5D3292064E500D5AD30 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,9 +195,10 @@
 				342183F229204E2900F378D2 /* OnBoardView.swift in Sources */,
 				342183EA2920430700F378D2 /* WelcomeView.swift in Sources */,
 				342183F829205C7400F378D2 /* SetExperienceView.swift in Sources */,
+				9BFCE5D4292064E500D5AD30 /* ProfileView.swift in Sources */,
 				342183D92920379000F378D2 /* TrainiumApp.swift in Sources */,
 				342183F4292050A100F378D2 /* View+Extension.swift in Sources */,
-				9BA784C42920519600A5DF04 /* Home.swift in Sources */,
+				9BA784C42920519600A5DF04 /* HomeView.swift in Sources */,
 				342183FC29205DB300F378D2 /* SetFriendsView.swift in Sources */,
 				342183EE2920439100F378D2 /* Color+Extension.swift in Sources */,
 				342183F62920599A00F378D2 /* OnBoardRouter.swift in Sources */,
