@@ -11,8 +11,11 @@
 		342183DB2920379000F378D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183DA2920379000F378D2 /* ContentView.swift */; };
 		342183DD2920379300F378D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DC2920379300F378D2 /* Assets.xcassets */; };
 		342183E02920379300F378D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DF2920379300F378D2 /* Preview Assets.xcassets */; };
-		342183EA2920430700F378D2 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183E92920430700F378D2 /* OnboardView.swift */; };
+		342183EA2920430700F378D2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183E92920430700F378D2 /* WelcomeView.swift */; };
 		342183EE2920439100F378D2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183ED2920439100F378D2 /* Color+Extension.swift */; };
+		342183F029204DF300F378D2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183EF29204DF300F378D2 /* SignUpView.swift */; };
+		342183F229204E2900F378D2 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F129204E2900F378D2 /* OnBoardView.swift */; };
+		342183F4292050A100F378D2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F3292050A100F378D2 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +24,11 @@
 		342183DA2920379000F378D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		342183DC2920379300F378D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342183DF2920379300F378D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		342183E92920430700F378D2 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		342183E92920430700F378D2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		342183ED2920439100F378D2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		342183EF29204DF300F378D2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		342183F129204E2900F378D2 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		342183F3292050A100F378D2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,9 @@
 		342183E8292038F100F378D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				342183E92920430700F378D2 /* OnboardView.swift */,
+				342183F129204E2900F378D2 /* OnBoardView.swift */,
+				342183E92920430700F378D2 /* WelcomeView.swift */,
+				342183EF29204DF300F378D2 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				342183ED2920439100F378D2 /* Color+Extension.swift */,
+				342183F3292050A100F378D2 /* View+Extension.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,8 +177,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				342183DB2920379000F378D2 /* ContentView.swift in Sources */,
-				342183EA2920430700F378D2 /* OnboardView.swift in Sources */,
+				342183F029204DF300F378D2 /* SignUpView.swift in Sources */,
+				342183F229204E2900F378D2 /* OnBoardView.swift in Sources */,
+				342183EA2920430700F378D2 /* WelcomeView.swift in Sources */,
 				342183D92920379000F378D2 /* TrainiumApp.swift in Sources */,
+				342183F4292050A100F378D2 /* View+Extension.swift in Sources */,
 				342183EE2920439100F378D2 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
