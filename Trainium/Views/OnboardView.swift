@@ -43,7 +43,7 @@ struct OnBoardView: View {
                     case .discovery:
                         buttonText = "Hop In!"
                     case .friends:
-                        buttonText = ""
+                        buttonText = "Get Started"
                     }
                     
                     onBoardRouter.currentPage.next()
@@ -67,6 +67,7 @@ struct OnBoardView: View {
                     .background(Color(0xFE2036))
                     .cornerRadius(12)
                 }
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
                 .padding([.horizontal, .bottom], 32)
             }
             
