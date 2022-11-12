@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TrainiumApp: App {
+    
+    @StateObject var onBoardRouter = OnBoardRouter.shared
+    
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            OnBoardView(onBoardRouter: onBoardRouter)
         }
     }
 }

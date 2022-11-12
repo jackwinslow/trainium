@@ -32,18 +32,6 @@ struct WelcomeView: View {
                         
             Spacer()
             
-            Button {
-                print("")
-            } label: {
-                Text("Get Started")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .fontWeight(.medium)
-                    .foregroundColor(Color(0xFCF7EE))
-                    .background(Color(0xFE2036))
-                    .cornerRadius(12)
-            }
-            .padding([.horizontal, .bottom], 32)
 
         }
     }

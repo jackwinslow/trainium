@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		342183D92920379000F378D2 /* TrainiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183D82920379000F378D2 /* TrainiumApp.swift */; };
-		342183DB2920379000F378D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183DA2920379000F378D2 /* ContentView.swift */; };
 		342183DD2920379300F378D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DC2920379300F378D2 /* Assets.xcassets */; };
 		342183E02920379300F378D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DF2920379300F378D2 /* Preview Assets.xcassets */; };
 		342183EA2920430700F378D2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183E92920430700F378D2 /* WelcomeView.swift */; };
@@ -16,13 +15,16 @@
 		342183F029204DF300F378D2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183EF29204DF300F378D2 /* SignUpView.swift */; };
 		342183F229204E2900F378D2 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F129204E2900F378D2 /* OnBoardView.swift */; };
 		342183F4292050A100F378D2 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F3292050A100F378D2 /* View+Extension.swift */; };
+		342183F62920599A00F378D2 /* OnBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F52920599A00F378D2 /* OnBoardRouter.swift */; };
+		342183F829205C7400F378D2 /* SetExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F729205C7400F378D2 /* SetExperienceView.swift */; };
+		342183FA29205CAC00F378D2 /* SetDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183F929205CAC00F378D2 /* SetDiscoveryView.swift */; };
+		342183FC29205DB300F378D2 /* SetFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183FB29205DB300F378D2 /* SetFriendsView.swift */; };
 		9BA784C42920519600A5DF04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA784C32920519600A5DF04 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		342183D52920379000F378D2 /* Trainium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342183D82920379000F378D2 /* TrainiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainiumApp.swift; sourceTree = "<group>"; };
-		342183DA2920379000F378D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		342183DC2920379300F378D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342183DF2920379300F378D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		342183E92920430700F378D2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -30,6 +32,10 @@
 		342183EF29204DF300F378D2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		342183F129204E2900F378D2 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		342183F3292050A100F378D2 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		342183F52920599A00F378D2 /* OnBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardRouter.swift; sourceTree = "<group>"; };
+		342183F729205C7400F378D2 /* SetExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExperienceView.swift; sourceTree = "<group>"; };
+		342183F929205CAC00F378D2 /* SetDiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDiscoveryView.swift; sourceTree = "<group>"; };
+		342183FB29205DB300F378D2 /* SetFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFriendsView.swift; sourceTree = "<group>"; };
 		9BA784C32920519600A5DF04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				342183D82920379000F378D2 /* TrainiumApp.swift */,
-				342183DA2920379000F378D2 /* ContentView.swift */,
 				342183E8292038F100F378D2 /* Views */,
 				342183E6292038DA00F378D2 /* Models */,
 				342183EC2920437D00F378D2 /* Services */,
@@ -95,6 +100,9 @@
 				342183F129204E2900F378D2 /* OnBoardView.swift */,
 				342183E92920430700F378D2 /* WelcomeView.swift */,
 				342183EF29204DF300F378D2 /* SignUpView.swift */,
+				342183F729205C7400F378D2 /* SetExperienceView.swift */,
+				342183F929205CAC00F378D2 /* SetDiscoveryView.swift */,
+				342183FB29205DB300F378D2 /* SetFriendsView.swift */,
 				9BA784C32920519600A5DF04 /* Home.swift */,
 			);
 			path = Views;
@@ -105,6 +113,7 @@
 			children = (
 				342183ED2920439100F378D2 /* Color+Extension.swift */,
 				342183F3292050A100F378D2 /* View+Extension.swift */,
+				342183F52920599A00F378D2 /* OnBoardRouter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,14 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				342183DB2920379000F378D2 /* ContentView.swift in Sources */,
 				342183F029204DF300F378D2 /* SignUpView.swift in Sources */,
 				342183F229204E2900F378D2 /* OnBoardView.swift in Sources */,
 				342183EA2920430700F378D2 /* WelcomeView.swift in Sources */,
+				342183F829205C7400F378D2 /* SetExperienceView.swift in Sources */,
 				342183D92920379000F378D2 /* TrainiumApp.swift in Sources */,
 				342183F4292050A100F378D2 /* View+Extension.swift in Sources */,
 				9BA784C42920519600A5DF04 /* Home.swift in Sources */,
+				342183FC29205DB300F378D2 /* SetFriendsView.swift in Sources */,
 				342183EE2920439100F378D2 /* Color+Extension.swift in Sources */,
+				342183F62920599A00F378D2 /* OnBoardRouter.swift in Sources */,
+				342183FA29205CAC00F378D2 /* SetDiscoveryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
