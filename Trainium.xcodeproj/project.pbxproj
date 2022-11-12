@@ -58,6 +58,7 @@
 				342183D82920379000F378D2 /* TrainiumApp.swift */,
 				342183DA2920379000F378D2 /* ContentView.swift */,
 				342183E8292038F100F378D2 /* Views */,
+				342183E6292038DA00F378D2 /* Models */,
 				342183EC2920437D00F378D2 /* Services */,
 				342183DC2920379300F378D2 /* Assets.xcassets */,
 				342183DE2920379300F378D2 /* Preview Content */,
@@ -76,7 +77,6 @@
 		342183E6292038DA00F378D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				342183E92920430700F378D2 /* OnboardView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 		342183E8292038F100F378D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				342183E6292038DA00F378D2 /* Models */,
+				342183E92920430700F378D2 /* OnboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

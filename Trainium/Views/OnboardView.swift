@@ -20,6 +20,8 @@ struct OnboardView: View {
                 + Text("Trainium")
                     .foregroundColor(Color(0xFE2036))
             }
+            .font(.system(size: 35))
+            .fontWeight(.medium)
         }
     }
 }
