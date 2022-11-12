@@ -11,6 +11,8 @@
 		342183DB2920379000F378D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183DA2920379000F378D2 /* ContentView.swift */; };
 		342183DD2920379300F378D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DC2920379300F378D2 /* Assets.xcassets */; };
 		342183E02920379300F378D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342183DF2920379300F378D2 /* Preview Assets.xcassets */; };
+		342183EA2920430700F378D2 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183E92920430700F378D2 /* OnboardView.swift */; };
+		342183EE2920439100F378D2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342183ED2920439100F378D2 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		342183DA2920379000F378D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		342183DC2920379300F378D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342183DF2920379300F378D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		342183E92920430700F378D2 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		342183ED2920439100F378D2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,7 @@
 				342183D82920379000F378D2 /* TrainiumApp.swift */,
 				342183DA2920379000F378D2 /* ContentView.swift */,
 				342183E8292038F100F378D2 /* Views */,
-				342183E6292038DA00F378D2 /* Models */,
+				342183EC2920437D00F378D2 /* Services */,
 				342183DC2920379300F378D2 /* Assets.xcassets */,
 				342183DE2920379300F378D2 /* Preview Content */,
 			);
@@ -72,6 +76,7 @@
 		342183E6292038DA00F378D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				342183E92920430700F378D2 /* OnboardView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,8 +84,17 @@
 		342183E8292038F100F378D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				342183E6292038DA00F378D2 /* Models */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		342183EC2920437D00F378D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				342183ED2920439100F378D2 /* Color+Extension.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				342183DB2920379000F378D2 /* ContentView.swift in Sources */,
+				342183EA2920430700F378D2 /* OnboardView.swift in Sources */,
 				342183D92920379000F378D2 /* TrainiumApp.swift in Sources */,
+				342183EE2920439100F378D2 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
