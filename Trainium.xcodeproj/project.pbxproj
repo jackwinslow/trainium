@@ -53,6 +53,8 @@
 			children = (
 				342183D82920379000F378D2 /* TrainiumApp.swift */,
 				342183DA2920379000F378D2 /* ContentView.swift */,
+				342183E8292038F100F378D2 /* Views */,
+				342183E6292038DA00F378D2 /* Models */,
 				342183DC2920379300F378D2 /* Assets.xcassets */,
 				342183DE2920379300F378D2 /* Preview Content */,
 			);
@@ -65,6 +67,20 @@
 				342183DF2920379300F378D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		342183E6292038DA00F378D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		342183E8292038F100F378D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
