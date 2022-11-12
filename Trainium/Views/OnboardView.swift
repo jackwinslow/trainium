@@ -67,7 +67,7 @@ struct OnBoardView: View {
                     .background(Color(0xFE2036))
                     .cornerRadius(12)
                 }
-                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 4)
+                .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
                 .padding([.horizontal, .bottom], 32)
             }
             
