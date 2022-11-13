@@ -45,7 +45,7 @@ struct Profile: View {
                 
                 ZStack {
                     Rectangle()
-                        .fill(Color(0x0776C5))
+                        .fill(Color("red").opacity(0.8))
                         .frame(width: 270, height: 250)
                         .cornerRadius(30)
                         .padding(.bottom, 275)
