@@ -23,6 +23,7 @@ struct CommunityView: View {
                 users.fetchUsers(with: keyword)
             }
         )
+        
         VStack {
             SearchBarView(users: users, keyword: keywordBinding)
             ScrollView {
@@ -30,6 +31,43 @@ struct CommunityView: View {
                     ProfileBarView(users: users, user: user)
                 }
             }
+            .frame(maxHeight:.infinity)
+            
+            Text("Featured Groups")
+                .font(.system(size: 30))
+                .fontWeight(.bold)
+                .foregroundColor(Color(0x424B54))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 10)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(0..<10) {_ in
+                        VStack {
+                            Button {
+                                
+                            } label : {
+                                Image(systemName: "person.circle.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height:75)
+                                    .foregroundColor(Color(0x424B54))
+                                    .fontWeight(.medium)
+                            }
+                            .buttonStyle(StaticButtonStyle())
+                            
+                            Text("Group Name")
+                                .font(.system(size: 15))
+                                .foregroundColor(Color(0x424B54))
+                                .fontWeight(.medium)
+                        }
+                        .frame(width: 100)
+                    }
+                }
+                .padding(.leading, 15)
+            }
+            .padding(.bottom, 60)
         }
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)

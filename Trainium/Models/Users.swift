@@ -102,23 +102,6 @@ class Users: ObservableObject {
         }
     }
     
-//    func friendsListener(completed: @escaping () -> ()) {
-//        db.collection("users").document(username).whereField("region", isEqualTo: region).order(by: "release_title").addSnapshotListener { (querySnapshot, error) in
-//            guard error == nil else {
-//                print("ERROR: adding the snapshot listener \(String(describing: error?.localizedDescription))")
-//                return completed()
-//            }
-//            Releases.shared.releasesArray = [] // clean out existing studentArray since new data will load
-//            // there are querySnapshot!.documents.count documents in the snapshot
-//            for document in querySnapshot!.documents {
-//                let release = Release(dictionary: document.data())
-//                release.documentID = document.documentID
-//                Releases.shared.releasesArray.append(release)
-//            }
-//            completed()
-//        }
-//    }
-    
 }
 
 class User {
