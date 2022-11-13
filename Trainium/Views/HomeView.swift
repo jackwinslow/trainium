@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let tips = ["Working out every day can improve your mental health dramatically.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
+    let tips = ["Working out every day can improves mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
     
     let days = [true, false, false, true, true, false, true]
     let daysOfTheWeek = ["S", "M", "T", "W", "T", "F", "S"]
@@ -60,7 +60,7 @@ struct HomeView: View {
                 }
                 .frame(width: 310)
                 .padding()
-                .background(Color(0x0776C5))
+                .background(Color("red"))
                 .cornerRadius(12)
                 .padding(.bottom, 15)
                 
@@ -72,13 +72,15 @@ struct HomeView: View {
                         .lineLimit(nil)
                         .padding(.horizontal, 75)
                         .padding(.vertical, 15)
-                        .background(Color(0x066AB2))
+                        .background(Color("red"))
                         .cornerRadius(12)
                 }
                 .font(.system(size: 20))
                 .fontWeight(.bold)
                 .foregroundColor(Color(0xFCF7EE))
                 .padding(.bottom, 25)
+                .buttonStyle(StaticButtonStyle())
+                .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
     
                 
                 
@@ -166,11 +168,15 @@ struct HomeView: View {
                 Text(tips.randomElement()!)
                     .frame(width: 350, height: 100)
                     .lineLimit(nil)
-                    .background(Color(0x0776C5).opacity(1.0))
+                    .background(Color("white").opacity(1.0))
                     .cornerRadius(12)
                     .font(.system(size: 20))
-                    .foregroundColor(Color(0xFCF7EE))
+                    .foregroundColor(Color("black"))
                     .fontWeight(.medium)
+                    .overlay(
+                         RoundedRectangle(cornerRadius: 12)
+                             .stroke(Color(0xFE2036), lineWidth: 2)
+                    )
                 
                 
                     

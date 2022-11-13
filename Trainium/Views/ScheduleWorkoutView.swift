@@ -20,26 +20,23 @@ struct ScheduleWorkoutView: View {
             VStack(spacing: 0) {
                 HStack {
                     
+                    Button {
+                        // leaves page
+                    } label : {
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(Color("black").opacity(0.7))
+                            .font(.system(size: 25))
+
+                            .padding(.leading, 10)
+                            .padding(.trailing, 20)
+                            
+                    }
                     
                     Text("Schedule Workout")
                         .font(.system(size: 35))
                         .foregroundColor(Color("black"))
                         .fontWeight(.bold)
-                        .padding(.top, 10)
-                        .padding(.bottom, 20)
-                        .padding(.horizontal, 20)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                    Button {
-                        // leaves page
-                    } label : {
-                        Text("X")
-                            .foregroundColor(Color("black").opacity(0.7))
-                            .font(.system(size: 25))
-                            .padding(.bottom, 5)
-                            .padding(.trailing, 15)
-                    }
-                    .buttonStyle(StaticButtonStyle())
+                    
                     
                 }
                 
@@ -157,12 +154,12 @@ struct ScheduleWorkoutView: View {
                     
                         
                 }
-                .buttonStyle(StaticButtonStyle())
-                .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
-                .padding(.vertical, 15)
+                .padding()
                 .padding(.horizontal, 75)
                 .background(Color("red"))
                 .cornerRadius(12)
+                .buttonStyle(StaticButtonStyle())
+                .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
                 
 
                     
