@@ -21,13 +21,14 @@ struct OnBoardView: View {
                 case .welcome:
                     WelcomeView()
                 case .signup:
-                    SignUpView()
+                    SetDetailsView()
+                        .padding(.top, 20)
                 case .experience:
                     SetExperienceView()
+                        .padding(.top, 20)
                 case .discovery:
                     SetDiscoveryView()
-                case .friends:
-                    SetFriendsView()
+                        .padding(.top, 20)
                 }
                 
                 Spacer()
@@ -37,12 +38,10 @@ struct OnBoardView: View {
                     case .welcome:
                         buttonText = "Continue"
                     case .signup:
-                        buttonText = "Keep Going"
-                    case .experience:
                         buttonText = "Almost There"
-                    case .discovery:
+                    case .experience:
                         buttonText = "Hop In!"
-                    case .friends:
+                    case .discovery:
                         buttonText = "Get Started"
                     }
                     
@@ -52,7 +51,7 @@ struct OnBoardView: View {
                         HStack {
                             Spacer()
                             
-                            if onBoardRouter.currentPage != .friends { Image(systemName: "arrow.right")
+                            if onBoardRouter.currentPage != .discovery { Image(systemName: "arrow.right")
                             }
                         }
                         
