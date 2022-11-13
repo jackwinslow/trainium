@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct GroupView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var group: Group
+    @Binding var creatingGroup: Bool
+    
     var body: some View {
         ZStack {
             ScrollView(showsIndicators:false) {
                 VStack(spacing: 0) {
-                    Text("Group Name")
+                    
+                    HStack {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            HStack {
+                                Image(systemName: "arrow.left")
+                                Text("Back")
+                            }
+                            
+                        }
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(0xFE2036))
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .top])
+                    
+                    Text(group.name)
                         .foregroundColor(Color("black"))
                         .font(.system(size: 45))
                         .padding()
@@ -20,10 +43,9 @@ struct GroupView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Button {
-                        
+                        creatingGroup = true
                     } label : {
                         Text("Invite more friends")
-                            
                             .font(.system(size: 35))
                             .padding()
                             .foregroundColor(Color("white"))
@@ -38,7 +60,7 @@ struct GroupView: View {
                         
                             
                         VStack {
-                            ForEach(0..<10) {_ in
+                            ForEach(group.members, id: \.self) { member in
                                 HStack {
                                     Image(systemName: "person.circle.fill")
                                         .resizable()
@@ -47,7 +69,7 @@ struct GroupView: View {
                                         .foregroundColor(Color(0x424B54))
                                         .padding(.trailing, 10)
 
-                                    Text("Friend Name")
+                                    Text(member)
                                         .font(.system(size: 25))
                                         .fontWeight(.medium)
                                     Spacer()
@@ -69,13 +91,17 @@ struct GroupView: View {
                     }
                     
                 }
+                .background(Color("white"))
             }
+            .background(Color("white"))
         }
+        .background(Color("white"))
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-struct GroupView_Previews: PreviewProvider {
-    static var previews: some View {
-        GroupView()
-    }
-}
+//struct GroupView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GroupView()
+//    }
+//}

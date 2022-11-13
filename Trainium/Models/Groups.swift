@@ -105,11 +105,10 @@ class Groups: ObservableObject {
             self.globalGroups = [] // clean out existing studentArray since new data will load
             // there are querySnapshot!.documents.count documents in the snapshot
             for document in querySnapshot!.documents {
-                let group = Group(dictionary: document.data())
-                if self.currentUser.groups.contains(group.documentID) {
-                    continue
+                if !self.currentUser.groups.contains(document.documentID) {
+                    let group = Group(dictionary: document.data())
+                    self.globalGroups.append(group)
                 }
-                self.globalGroups.append(group)
             }
         }
     }
