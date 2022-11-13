@@ -16,9 +16,9 @@ struct HomeView: View {
     @AppStorage("firstName") var firstName: String = ""
     
     @State var creatingGroup: Bool = false
-    
+    @State var groupName: String = ""
     @State var showingSchedule = false
-    @State var invites = []
+    @State var invites: [String] = []
     let tips = ["Working out every day can improve mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
     
     let days = [true, false, false, true, true, false, true]
@@ -260,7 +260,17 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding([.top, .trailing])
                     
-                    
+                    TextField("Enter Group Name", text: $groupName)
+                        .frame(height: 35)
+                        .disableAutocorrection(true)
+                        .foregroundColor(Color(0xFE2036))
+                        .accentColor(Color(0xFE2036))
+                        .padding(.leading,12)
+                        .padding(.bottom, 15)
+                        .overlay(
+                             RoundedRectangle(cornerRadius: 12)
+                                 .stroke(Color(0x424B54), lineWidth: 1)
+                        )
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         
@@ -274,7 +284,13 @@ struct HomeView: View {
                                     Spacer()
                                     
                                     Button {
-                                        
+                                        if (!invites.contains(friend.username)) {
+                                            self.invites.append(friend.username)
+                                        }
+                                        else {
+                                            let idx = invites.firstIndex(where: {$0 == friend.username})
+                                            self.invites.remove(at: idx!)
+                                        }
                                     } label: {
                                         Text("Invite")
                                             .font(.system(size: 18))
@@ -287,12 +303,23 @@ struct HomeView: View {
                                 .padding([.top, .bottom], 10)
                                 .padding([.leading, .trailing], 20)
                                 .frame(maxWidth: .infinity)
-                                .background(Color("red"))
+                                .background(invites.contains(friend.username) ? Color("red").opacity(0.8) : Color("red"))
                                 .cornerRadius(12)
                             }
+                            
                         }
                             
                         
+                    }
+                    Button {
+                        
+                    } label : {
+                        Text("Create Group")
+                            .foregroundColor(Color("white"))
+                            .background(Color("red"))
+                            .padding([.top, .bottom], 15)
+                            .padding(.horizontal, 50)
+                            .cornerRadius(12)
                     }
                         
                     
