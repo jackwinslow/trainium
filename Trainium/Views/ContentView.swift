@@ -16,6 +16,8 @@ struct ContentView: View {
     
     @AppStorage("username") var username: String = ""
     
+    let impactSoft = UIImpactFeedbackGenerator(style: .soft)
+    
     var body: some View {
         ZStack {
             
@@ -43,6 +45,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
+                        impactSoft.impactOccurred()
                         viewRouter.currentPage = .home
                     } label: {
                         VStack {
@@ -60,6 +63,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
+                        impactSoft.impactOccurred()
                         viewRouter.currentPage = .community
                     } label: {
                         VStack {
@@ -77,6 +81,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
+                        impactSoft.impactOccurred()
                         viewRouter.currentPage = .personal
                     } label: {
                         VStack {
