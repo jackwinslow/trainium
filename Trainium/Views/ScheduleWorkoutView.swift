@@ -8,20 +8,31 @@
 import SwiftUI
 
 struct ScheduleWorkoutView: View {
-    
+    @State var goBack = false
     @State private var date = Date()
     @State private var time = Date()
     @State var selectedPartners = Set<UUID>()
     @State var selectedGroup = Set<UUID>()
     
     var body: some View {
+            if goBack {
+                HomeView()
+            }
+            else {
+                Schedule
+            }
+            
+        }
+
+    
+    var Schedule: some View {
         ZStack {
             Color("white").ignoresSafeArea()
             VStack(spacing: 0) {
                 HStack {
                     
                     Button {
-                        // leaves page
+                        self.goBack = true
                     } label : {
                         Image(systemName: "arrow.left")
                             .foregroundColor(Color("black").opacity(0.7))

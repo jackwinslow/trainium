@@ -7,19 +7,32 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
+    @State var showingSchedule = false
     let tips = ["Working out every day can improves mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
     
     let days = [true, false, false, true, true, false, true]
     let daysOfTheWeek = ["S", "M", "T", "W", "T", "F", "S"]
     
     var body: some View {
+            if showingSchedule {
+                ScheduleWorkoutView()
+            }
+            else {
+                Home
+            }
+            
+        }
+    
+    var Home: some View {
         ZStack {
             
             Color(0xFCF7EE).ignoresSafeArea()
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    Text("Trainium")
+                    Text("Hi, Name")
                         .font(.system(size: 45))
                     Spacer()
                     Image("coin")
@@ -66,6 +79,7 @@ struct HomeView: View {
                 
                 
                 Button {
+                    self.showingSchedule = true
                     
                 } label : {
                     Text("Schedule A Workout")
@@ -187,7 +201,6 @@ struct HomeView: View {
             }
             
             
-            
 
         }
 
@@ -197,5 +210,6 @@ struct HomeView: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+        
     }
 }
