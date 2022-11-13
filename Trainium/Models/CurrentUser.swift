@@ -19,12 +19,13 @@ class CurrentUser: ObservableObject {
     @AppStorage("discoverable") var discoverable: Bool = false
     @Published var friends: [String] = []
     @Published var friendRequests: [String] = []
-//    @AppStorage("groups") var groups: [String]: []
-//    @AppStorage("groupInvites") var groupInvites: [String]: []
-//    @AppStorage("workoutInvites") var workoutInvites: [String] = ""
-//    @AppStorage("currentWorkout") var currentWorkout: String = ""
+    @Published var groups: [String] = []
+    @Published var groupInvites: [String] = []
+//    @Published var workoutInvites: [String] = ""
+//    @Published var currentWorkout: String = ""
     
     @Published var friendsArray: [User] = []
+    @Published var groupsArray: [Group] = []
     
     var db: Firestore!
     var listener: ListenerRegistration? = nil
@@ -48,6 +49,8 @@ class CurrentUser: ObservableObject {
             self.discoverable = querySnapshot?.get("discoverable") as! Bool
             self.friends = querySnapshot?.get("friends") as! [String]
             self.friendRequests = querySnapshot?.get("friendRequests") as! [String]
+            self.groups = querySnapshot?.get("groups") as! [String]
+            self.groupInvites = querySnapshot?.get("groupInvites") as! [String]
             
             completed()
         }
@@ -64,6 +67,10 @@ class CurrentUser: ObservableObject {
         discoverable = false
         friends = []
         friendRequests = []
+        friendsArray = []
+        groups = []
+        groupInvites = []
+        groupsArray = []
         
         completed()
     }

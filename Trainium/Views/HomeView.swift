@@ -12,6 +12,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewRouter: ViewRouter
     @StateObject var currentUser: CurrentUser
+    @StateObject var groups: Groups
     
     @AppStorage("firstName") var firstName: String = ""
     
