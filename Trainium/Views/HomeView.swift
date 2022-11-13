@@ -91,6 +91,7 @@ struct HomeView: View {
                     .foregroundColor(Color(0x424B54))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 10)
+                    .padding(.bottom)
                     
 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -106,6 +107,7 @@ struct HomeView: View {
                                         .frame(height:75)
                                         .foregroundColor(Color(0x424B54))
                                 }
+                                .buttonStyle(StaticButtonStyle())
                                 
                                 Text("Friend Name")
                                     .font(.system(size: 15))
@@ -144,6 +146,7 @@ struct HomeView: View {
                                         .foregroundColor(Color(0x424B54))
                                         .fontWeight(.medium)
                                 }
+                                .buttonStyle(StaticButtonStyle())
                                 
                                 Text("Group Name")
                                     .font(.system(size: 15))
