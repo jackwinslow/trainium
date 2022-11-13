@@ -14,9 +14,7 @@ class Users: ObservableObject {
     @AppStorage("username") var username: String = ""
     
     static let shared = Users()
-    
-    @Published var friendsArray: [User] = []
-    
+        
     @Published var queryResultUsers: [User] = []
     
     var db: Firestore!

@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject var authViewModel: AuthViewModel
     @StateObject var currentUser: CurrentUser
     @StateObject var users: Users
+    @StateObject var groups: Groups
     
     @AppStorage("username") var username: String = ""
     
@@ -25,7 +26,7 @@ struct ContentView: View {
             
             switch viewRouter.currentPage {
             case .home:
-                HomeView(viewRouter: viewRouter, currentUser: currentUser)
+                HomeView(viewRouter: viewRouter, currentUser: currentUser, groups: groups)
             case .community:
                 CommunityView(users: users)
             case .personal:
@@ -108,6 +109,9 @@ struct ContentView: View {
         }
         .onChange(of: currentUser.friends, perform: { _ in
             users.fetchFriends(friends: currentUser.friends)
+        })
+        .onChange(of: currentUser.groups, perform: { _ in
+            groups.fetchGroups(groups: currentUser.groups)
         })
         .onAppear {
             if currentUser.listener == nil && username != "" {
