@@ -119,6 +119,9 @@ struct ContentView: View {
                     print("Added listener on current user from storage")
                 }
             }
+            
+            groups.fetchGlobalGroups()
+
         }
     }
 }

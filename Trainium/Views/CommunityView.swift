@@ -76,9 +76,6 @@ struct CommunityView: View {
         .onTapGesture {
             hideKeyboard()
         }
-        .onAppear {
-            groups.fetchGlobalGroups()
-        }
 //        ZStack {
 //
 //            Color("white").ignoresSafeArea()
@@ -165,26 +162,39 @@ struct ProfileBarView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(Color("red").opacity(0.2))
+                .foregroundColor(Color("red"))
             HStack {
                 VStack(alignment: .leading) {
                     Text("\(user.username)")
-                    Text("\(user.firstName) \(user.lastName)")
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .padding(.bottom, 8)
+                    
+                    Text("Name: \(user.firstName) \(user.lastName)")
+                        .font(.system(size: 16))
+                        .fontWeight(.medium)
                 }
                 
                 Spacer()
                 
                 if currentUser.friends.contains(user.username) {
-                    Text("Friends")
+                    Text("Already Friends")
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .padding(.trailing, 8)
                 } else {
                     Button {
                         users.sendFriendRequest(requestUser: user.username)
                     } label: {
                         Text("Send Request")
                     }
+                    .font(.system(size: 16))
+                    .fontWeight(.bold)
+                    .padding(.trailing, 8)
                 }
 
             }
+            .foregroundColor(Color("white"))
             .padding(.horizontal, 10)
         }
         .frame(maxWidth: .infinity, minHeight: 100)
