@@ -118,14 +118,38 @@ struct HomeView: View {
                                 .padding(.leading, 10)
                                 .padding(.bottom, 10)
                             
-                            ScrollView {
-                                ForEach(0..<3) {_ in
-                                    Text("**Upcoming Workout**")
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .frame(width: 350, height: 150)
+                                    .foregroundColor(Color(0xFE2036))
+                                
+                                VStack(alignment: .leading){
+                                    Text("November 14th at 1:00 PM with Lebron James")
                                         .font(.system(size: 15))
-                                        .foregroundColor(Color(0x424B54))
-                                        .fontWeight(.medium)
+                                    
+                                    
+                                        .foregroundColor(Color(0xffffff))
+                                        .fontWeight(.bold)
+                                    
+                                    Spacer()
+                                        .frame(height: 20)
+                                    
+                                    Text("November 16th at 3:00 PM with Jack Winslow")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color(0xffffff))
+                                        .fontWeight(.bold)
+                                    
+                                    Spacer()
+                                        .frame(height: 20)
+                                    
+                                    Text("November 17th at 11:30 AM with Tom Brady")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color(0xffffff))
+                                        .fontWeight(.bold)
                                 }
                             }
+                            
                             HStack(alignment: .lastTextBaseline) {
                                 Text("Friends")
                                     .font(.system(size: 30))
