@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 class AuthViewModel: ObservableObject {
+    @StateObject var currentUser = CurrentUser.shared
+    
     let auth = Auth.auth()
     
     @Published var signedIn = false
@@ -27,6 +29,19 @@ class AuthViewModel: ObservableObject {
                 self.returnString = error?.localizedDescription ?? ""
                 print(error?.localizedDescription)
                 return
+            }
+            
+            var username = ""
+            
+            self.db.collection("users").whereField("email", isEqualTo: email).getDocuments { querySnapshot, queryError in
+                for document in querySnapshot!.documents {
+                    print(document.get("username") as! String)
+                    username = document.get("username") as! String
+                }
+                
+                self.currentUser.addListener(username: username) {
+                    print("Added listener on current user")
+                }
             }
             
             // Success
@@ -49,7 +64,7 @@ class AuthViewModel: ObservableObject {
                 discoverable = true
             }
             
-            self.db.collection("users").document().setData([
+            self.db.collection("users").document(username).setData([
                 "authProvider": "local",
                 "firstName": firstName,
                 "lastName": lastName,
@@ -57,8 +72,17 @@ class AuthViewModel: ObservableObject {
                 "email": email,
                 "experienceLevel": experienceLevel,
                 "discoverable": discoverable,
-                "uid": result?.user.uid ?? ""
+                "friends": [],
+                "friendRequests": [],
+                "groups": [],
+                "groupInvites": [],
+                "workoutInvites": [],
+                "currentWorkout": ""
             ])
+            
+            self.currentUser.addListener(username: username) {
+                print("Added listener on current user")
+            }
             
             // Success
             self.signedIn = true
@@ -71,6 +95,10 @@ class AuthViewModel: ObservableObject {
             self.signedIn = false
         } catch {
             print(error.localizedDescription)
+        }
+        
+        currentUser.removeListener {
+            print("Removed listener on current user")
         }
     }
 }

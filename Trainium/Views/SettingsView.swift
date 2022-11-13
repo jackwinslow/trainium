@@ -16,7 +16,7 @@ struct SettingsView: View {
     
     var body: some View {
             if goBack {
-                ProfileView()
+//                ProfileView(authViewModel: )
             }
             else {
                 setView

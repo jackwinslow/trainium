@@ -19,8 +19,8 @@ struct OnBoardView: View {
     @State var email: String = ""
     @State var username: String = ""
     @State var password: String = ""
-    @State var experience: String = ""
-    @State var beDiscoverable: String = ""
+    @State var experience: String = "Beginner"
+    @State var beDiscoverable: String = "Yes, make me discoverable"
     
     var body: some View {
         ZStack {
@@ -31,6 +31,7 @@ struct OnBoardView: View {
                 if onBoardRouter.currentPage != .welcome {
                     HStack {
                         Button {
+                            authViewModel.returnString = ""
                             onBoardRouter.currentPage.last()
                         } label: {
                             HStack {

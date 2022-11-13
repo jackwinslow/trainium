@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ScheduleWorkoutView: View {
+    
+    @StateObject var currentUser = CurrentUser.shared
+    
     @State var goBack = false
     @State private var date = Date()
     @State private var time = Date()
@@ -16,7 +19,7 @@ struct ScheduleWorkoutView: View {
     
     var body: some View {
             if goBack {
-                HomeView()
+                HomeView(currentUser: CurrentUser.shared)
             }
             else {
                 Schedule
@@ -82,7 +85,7 @@ struct ScheduleWorkoutView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(0..<10) {_ in
+                        ForEach(currentUser.friendsArray, id: \.username) { friend in
                             VStack {
                                 Button {
                                     /*
@@ -101,7 +104,7 @@ struct ScheduleWorkoutView: View {
                                         .foregroundColor(Color(0x424B54))
                                 }
                                 
-                                Text("Friend Name")
+                                Text("\(friend.firstName) \(friend.lastName)")
                                     .font(.system(size: 15))
                                     .foregroundColor(Color(0x424B54))
                             }

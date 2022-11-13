@@ -10,8 +10,12 @@ import SwiftUI
 
 
 struct HomeView: View {
+    @StateObject var currentUser: CurrentUser
+    
+    @AppStorage("firstName") var firstName: String = ""
+    
     @State var showingSchedule = false
-    let tips = ["Working out every day can improves mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
+    let tips = ["Working out every day can improve mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
     
     let days = [true, false, false, true, true, false, true]
     let daysOfTheWeek = ["S", "M", "T", "W", "T", "F", "S"]
@@ -27,12 +31,10 @@ struct HomeView: View {
         }
     
     var Home: some View {
-        ZStack {
-            
-            Color(0xFCF7EE).ignoresSafeArea()
+        ScrollView(showsIndicators:false) {
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    Text("Hi, Name")
+                    Text("Hi, \(firstName)!")
                         .font(.system(size: 45))
                     Spacer()
                     Image("coin")
@@ -40,7 +42,7 @@ struct HomeView: View {
                         .scaledToFit()
                         .frame(height: 20)
                     Text(" 1500")
-
+                    
                         .font(.system(size: 20))
                     
                 }
@@ -95,7 +97,7 @@ struct HomeView: View {
                 .padding(.bottom, 25)
                 .buttonStyle(StaticButtonStyle())
                 .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
-    
+                
                 
                 
                 
@@ -106,11 +108,11 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 10)
                     .padding(.bottom)
-                    
-
+                
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(0..<10) {_ in
+                        ForEach(currentUser.friendsArray, id: \.username) {friend in
                             VStack {
                                 Button {
                                     
@@ -123,7 +125,7 @@ struct HomeView: View {
                                 }
                                 .buttonStyle(StaticButtonStyle())
                                 
-                                Text("Friend Name")
+                                Text("\(friend.firstName) \(friend.lastName)")
                                     .font(.system(size: 15))
                                     .foregroundColor(Color(0x424B54))
                             }
@@ -175,12 +177,12 @@ struct HomeView: View {
                 .padding(.bottom, 25)
                 
                 /*Text("Motivation!")
-                    .font(.system(size: 30))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(0x424B54))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 10)
-                    .padding(.bottom, 10)*/
+                 .font(.system(size: 30))
+                 .fontWeight(.bold)
+                 .foregroundColor(Color(0x424B54))
+                 .frame(maxWidth: .infinity, alignment: .leading)
+                 .padding(.horizontal, 10)
+                 .padding(.bottom, 10)*/
                 
                 Text(tips.randomElement()!)
                     .frame(width: 350, height: 100)
@@ -191,25 +193,20 @@ struct HomeView: View {
                     .foregroundColor(Color("black"))
                     .fontWeight(.medium)
                     .overlay(
-                         RoundedRectangle(cornerRadius: 12)
-                             .stroke(Color(0xFE2036), lineWidth: 2)
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(0xFE2036), lineWidth: 2)
                     )
                 
                 
-                    
-                Spacer()
             }
-            
-            
-
         }
 
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-        
-    }
-}
+//struct Home_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//        
+//    }
+//}
