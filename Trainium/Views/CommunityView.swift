@@ -72,6 +72,9 @@ struct CommunityView: View {
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onTapGesture {
+            hideKeyboard()
+        }
 //        ZStack {
 //
 //            Color("white").ignoresSafeArea()

@@ -13,6 +13,9 @@ struct PersonalView: View {
     @StateObject var currentUser: CurrentUser
     @StateObject var users: Users
     
+    let impactSoft = UIImpactFeedbackGenerator(style: .soft)
+
+    
     var body: some View {
 //            if goSettings {
 //                SettingsView(authViewModel: authViewModel, currentUser: currentUser, users: users)
@@ -90,6 +93,7 @@ struct PersonalView: View {
                                     Spacer()
                                     
                                     Button {
+                                        impactSoft.impactOccurred()
                                         users.acceptFriendRequest(requestUser: request)
                                     } label: {
                                         Text("Accept")

@@ -20,6 +20,12 @@ class Groups: ObservableObject {
     init() {
         db = Firestore.firestore()
     }
+    
+    func createNewGroup(name: String, discoverable: Bool, members: [String]) {
+        
+        
+        
+    }
 }
 
 class Group {
