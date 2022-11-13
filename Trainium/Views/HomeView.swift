@@ -18,6 +18,7 @@ struct HomeView: View {
     @State var creatingGroup: Bool = false
     
     @State var showingSchedule = false
+    @State var invites = []
     let tips = ["Working out every day can improve mental health.", "Working out 3 - 5 times a week can improve mental health.", "Exercising increases neuroplasticity!"]
     
     let days = [true, false, false, true, true, false, true]
@@ -259,8 +260,43 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding([.top, .trailing])
                     
-                    Spacer()
                     
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        
+                            
+                        VStack {
+                            ForEach(currentUser.friendsArray, id: \.username) { friend in
+                                HStack {
+                                    Text("\(friend.firstName) \(friend.lastName)")
+                                        .font(.system(size: 18))
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    
+                                    Button {
+                                        
+                                    } label: {
+                                        Text("Invite")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                    }
+                                    
+                                    
+                                }
+                                .foregroundColor(Color("white"))
+                                .padding([.top, .bottom], 10)
+                                .padding([.leading, .trailing], 20)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("red"))
+                                .cornerRadius(12)
+                            }
+                        }
+                            
+                        
+                    }
+                        
+                    
+                    Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("white"))
