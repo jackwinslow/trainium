@@ -7,22 +7,49 @@
 
 import SwiftUI
 
-struct Settings: View {
+struct SettingsView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var username = ""
     @State private var password = ""
+    @State var goBack = false
+    
     var body: some View {
+            if goBack {
+                ProfileView()
+            }
+            else {
+                setView
+            }
+            
+        }
+    
+    var setView: some View {
         ZStack {
             
             Color("white").ignoresSafeArea()
             VStack(spacing: 0) {
-                Text("Settings")
-                    .foregroundColor(Color("black"))
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 45))
-                    .padding()
+                HStack {
+                    
+                    Button {
+                        self.goBack = true
+                    } label : {
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(Color("black").opacity(0.7))
+                            .font(.system(size: 25))
+
+                            .padding(.leading, 10)
+                            .padding(.trailing, 20)
+                            
+                    }
+                    
+                    Text("Schedule Workout")
+                        .font(.system(size: 35))
+                        .foregroundColor(Color("black"))
+                        .fontWeight(.bold)
+                    
+                    
+                }
                 
                 Text("Change Username:")
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -120,6 +147,6 @@ struct Settings: View {
 
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
-        Settings()
+        SettingsView()
     }
 }

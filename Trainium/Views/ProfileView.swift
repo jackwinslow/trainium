@@ -7,19 +7,35 @@
 
 import SwiftUI
 
-struct Profile: View {
+struct ProfileView: View {
+    @State var goSettings = false
+    
     var body: some View {
+            if goSettings {
+                SettingsView()
+            }
+            else {
+                setView
+            }
+            
+        }
+    
+    var profile: some View {
         ZStack {
             VStack {
             
-                Image(systemName: "gear")
-                    .resizable()
-                    .frame(width:40, height: 40)
-                    .opacity(0.5)
-                    .frame(maxWidth: .infinity, alignment:
-                            .trailing)
-                    .padding(.trailing, 30)
-                    .padding(.top, 40)
+                Button {
+                    self.goSettings = true
+                } label : {
+                    Image(systemName: "gear")
+                        .resizable()
+                        .frame(width:40, height: 40)
+                        .opacity(0.5)
+                        .frame(maxWidth: .infinity, alignment:
+                                .trailing)
+                        .padding(.trailing, 30)
+                        .padding(.top, 40)
+                }
                     
 
                 Image(systemName: "person.circle.fill")
@@ -91,6 +107,6 @@ struct Profile: View {
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
-        Profile()
+        ProfileView()
     }
 }
