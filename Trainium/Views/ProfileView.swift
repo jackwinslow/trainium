@@ -15,7 +15,7 @@ struct ProfileView: View {
                 SettingsView()
             }
             else {
-                setView
+                profile
             }
             
         }
