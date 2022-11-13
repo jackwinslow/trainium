@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct SetDetailsView: View {
     
     @State var firstName: String = ""
     @State var lastName: String = ""
@@ -127,6 +127,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SetDetailsView()
     }
 }

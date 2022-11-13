@@ -21,13 +21,14 @@ struct OnBoardView: View {
                 case .welcome:
                     WelcomeView()
                 case .signup:
-                    SignUpView()
+                    SetDetailsView()
+                        .padding(.top, 20)
                 case .experience:
                     SetExperienceView()
+                        .padding(.top, 20)
                 case .discovery:
                     SetDiscoveryView()
-                case .friends:
-                    SetFriendsView()
+                        .padding(.top, 20)
                 }
                 
                 Spacer()
@@ -37,13 +38,11 @@ struct OnBoardView: View {
                     case .welcome:
                         buttonText = "Continue"
                     case .signup:
-                        buttonText = "Keep Going"
-                    case .experience:
                         buttonText = "Almost There"
-                    case .discovery:
+                    case .experience:
                         buttonText = "Hop In!"
-                    case .friends:
-                        buttonText = ""
+                    case .discovery:
+                        buttonText = "Get Started"
                     }
                     
                     onBoardRouter.currentPage.next()
@@ -52,7 +51,7 @@ struct OnBoardView: View {
                         HStack {
                             Spacer()
                             
-                            if onBoardRouter.currentPage != .friends { Image(systemName: "arrow.right")
+                            if onBoardRouter.currentPage != .discovery { Image(systemName: "arrow.right")
                             }
                         }
                         
@@ -67,6 +66,7 @@ struct OnBoardView: View {
                     .background(Color(0xFE2036))
                     .cornerRadius(12)
                 }
+                .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 4)
                 .padding([.horizontal, .bottom], 32)
             }
             

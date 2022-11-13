@@ -16,7 +16,7 @@ class OnBoardRouter: ObservableObject {
 }
 
 enum Stage: Int {
-    case welcome, signup, experience, discovery, friends
+    case welcome, signup, experience, discovery
     
     mutating func next(){
         self = Stage(rawValue: rawValue + 1) ?? Stage(rawValue: 0)!
