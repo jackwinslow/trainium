@@ -14,7 +14,8 @@ struct TrainiumApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnBoardView(onBoardRouter: onBoardRouter)
+            //OnBoardView(onBoardRouter: onBoardRouter)
+            HomeView()
         }
     }
 }
