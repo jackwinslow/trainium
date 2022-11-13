@@ -58,6 +58,12 @@ struct PersonalView: View {
                         .font(.system(size: 32))
                         .fontWeight(.medium)
                         .foregroundColor(Color("black"))
+                        .padding(.bottom,5)
+                    
+                    Text("Fitness Level: \(currentUser.experienceLevel)")
+                        .font(.system(size: 18))
+                        .fontWeight(.regular)
+                        .foregroundColor(Color("black"))
                         .padding(.bottom,32)
                     
                     Text("Friend Requests")
