@@ -11,6 +11,7 @@ struct ScheduleWorkoutView: View {
     
     @StateObject var currentUser = CurrentUser.shared
     @StateObject var viewRouter: ViewRouter
+    @StateObject var groups: Groups
     
     @State var goBack = false
     @State private var date = Date()
@@ -20,7 +21,7 @@ struct ScheduleWorkoutView: View {
     
     var body: some View {
             if goBack {
-                HomeView(viewRouter: viewRouter, currentUser: CurrentUser.shared)
+                HomeView(viewRouter: viewRouter, currentUser: CurrentUser.shared, groups: groups)
             }
             else {
                 Schedule

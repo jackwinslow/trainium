@@ -28,9 +28,9 @@ struct ContentView: View {
             case .home:
                 HomeView(viewRouter: viewRouter, currentUser: currentUser, groups: groups)
             case .community:
-                CommunityView(users: users)
+                CommunityView(users: users, groups: groups)
             case .personal:
-                PersonalView(authViewModel: authViewModel, currentUser: currentUser, users: users)
+                PersonalView(authViewModel: authViewModel, currentUser: currentUser, users: users, groups: groups)
             }
             
             VStack(spacing: 0) {

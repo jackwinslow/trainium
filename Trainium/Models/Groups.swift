@@ -13,6 +13,8 @@ class Groups: ObservableObject {
     
     @AppStorage("username") var username: String = ""
     
+    @Published var globalGroups: [Group] = []
+    
     static let shared = Groups()
     
     var db: Firestore!
@@ -36,6 +38,12 @@ class Groups: ObservableObject {
         for member in members {
             sendGroupInvite(groupID: newGroupRef.documentID, invitee: member)
         }
+        
+        // Add group to user
+        db.collection("users").document(self.username).updateData([
+            "groups": FieldValue.arrayUnion([newGroupRef.documentID])
+        ])
+        
     }
     
     func sendGroupInvite(groupID: String, invitee: String) {
@@ -83,6 +91,25 @@ class Groups: ObservableObject {
                     documentID: querySnapshot!.get("name") as! String)
                 
                 self.currentUser.groupsArray.append(newGroup)
+            }
+        }
+    }
+    
+    func fetchGlobalGroups() {
+        globalGroups = []
+        db.collection("groups").limit(to: 20).addSnapshotListener { (querySnapshot, error) in
+            guard error == nil else {
+                print("ERROR: adding the snapshot listener \(String(describing: error?.localizedDescription))")
+                return
+            }
+            self.globalGroups = [] // clean out existing studentArray since new data will load
+            // there are querySnapshot!.documents.count documents in the snapshot
+            for document in querySnapshot!.documents {
+                let group = Group(dictionary: document.data())
+                if self.currentUser.groups.contains(group.documentID) {
+                    continue
+                }
+                self.globalGroups.append(group)
             }
         }
     }

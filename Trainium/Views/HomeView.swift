@@ -27,7 +27,7 @@ struct HomeView: View {
     
     var body: some View {
             if showingSchedule {
-                ScheduleWorkoutView(viewRouter: viewRouter)
+                ScheduleWorkoutView(viewRouter: viewRouter, groups: groups)
             }
             else {
                 Home
@@ -209,7 +209,7 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 12) {
-                                ForEach(0..<10) {_ in
+                                ForEach(currentUser.groupsArray, id: \.documentID) { group in
                                     VStack {
                                         Button {
                                             
@@ -223,7 +223,7 @@ struct HomeView: View {
                                         }
                                         .buttonStyle(StaticButtonStyle())
                                         
-                                        Text("Group Name")
+                                        Text(group.name)
                                             .font(.system(size: 15))
                                             .foregroundColor(Color(0x424B54))
                                             .fontWeight(.medium)
@@ -258,6 +258,7 @@ struct HomeView: View {
                     
                     
                 }
+                .padding(.bottom, 60)
             }
             
             if creatingGroup {
@@ -285,11 +286,11 @@ struct HomeView: View {
                         .foregroundColor(Color(0xFE2036))
                         .accentColor(Color(0xFE2036))
                         .padding(.leading,12)
-                        .padding(.bottom, 15)
                         .overlay(
                              RoundedRectangle(cornerRadius: 12)
                                  .stroke(Color(0x424B54), lineWidth: 1)
                         )
+                        .padding([.horizontal, .bottom])
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         
@@ -327,19 +328,22 @@ struct HomeView: View {
                             }
                             
                         }
+                        .padding(.horizontal)
                             
                         
                     }
                     Button {
-                        
+                        groups.createNewGroup(name: groupName, discoverable: true, members: invites)
+                        creatingGroup = false
                     } label : {
                         Text("Create Group")
                             .foregroundColor(Color("white"))
-                            .background(Color("red"))
                             .padding([.top, .bottom], 15)
                             .padding(.horizontal, 50)
+                            .background(Color("red"))
                             .cornerRadius(12)
                     }
+                    .padding(.bottom)
                         
                     
                     Spacer()

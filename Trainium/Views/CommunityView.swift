@@ -10,6 +10,7 @@ import SwiftUI
 struct CommunityView: View {
     
     @StateObject var users: Users
+    @StateObject var groups: Groups
     @State var keyword = ""
     
     var body: some View {
@@ -43,7 +44,7 @@ struct CommunityView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach(0..<10) {_ in
+                    ForEach(groups.globalGroups, id: \.documentID) { group in
                         VStack {
                             Button {
                                 
@@ -57,7 +58,7 @@ struct CommunityView: View {
                             }
                             .buttonStyle(StaticButtonStyle())
                             
-                            Text("Group Name")
+                            Text(group.name)
                                 .font(.system(size: 15))
                                 .foregroundColor(Color(0x424B54))
                                 .fontWeight(.medium)
@@ -74,6 +75,9 @@ struct CommunityView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onTapGesture {
             hideKeyboard()
+        }
+        .onAppear {
+            groups.fetchGlobalGroups()
         }
 //        ZStack {
 //

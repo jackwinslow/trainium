@@ -12,6 +12,7 @@ struct PersonalView: View {
     @StateObject var authViewModel: AuthViewModel
     @StateObject var currentUser: CurrentUser
     @StateObject var users: Users
+    @StateObject var groups: Groups
     
     let impactSoft = UIImpactFeedbackGenerator(style: .soft)
 
@@ -119,7 +120,7 @@ struct PersonalView: View {
                     }
                     .padding([.horizontal, .bottom])
                     
-                    Text("Friends")
+                    Text("Group Invites")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 24))
                         .fontWeight(.regular)
@@ -128,18 +129,36 @@ struct PersonalView: View {
                     
                     VStack {
                         
-                        if currentUser.friendsArray.count == 0 {
-                            Text("Search the Community to find Friends!")
+                        if currentUser.groupInvites.count == 0 {
+                            Text("No Current Invites")
                                 .font(.system(size: 24))
                                 .fontWeight(.regular)
                                 .foregroundColor(Color("red"))
                                 .padding(.top)
                         } else {
-                            ForEach(currentUser.friendsArray, id: \.username) { friend in
+                            ForEach(currentUser.groupInvites, id: \.self) { invite in
                                 HStack {
-                                    Text("\(friend.firstName) \(friend.lastName)")
+                                    Text("New Group Invite")
                                         .font(.system(size: 18))
                                         .fontWeight(.medium)
+                                    Spacer()
+                                    
+                                    Button {
+                                        impactSoft.impactOccurred()
+                                        groups.acceptGroupInvite(groupID: invite)
+                                    } label: {
+                                        Text("Accept")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                    }
+                                    
+                                    Button {
+                                        groups.declineGroupInvite(groupID: invite)
+                                    } label: {
+                                        Text("Decline")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                    }
                                 }
                                 .foregroundColor(Color("white"))
                                 .padding(10)
@@ -149,8 +168,41 @@ struct PersonalView: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding([.horizontal, .bottom])
+                    
+//                    Text("Friends")
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .font(.system(size: 24))
+//                        .fontWeight(.regular)
+//                        .foregroundColor(Color("black"))
+//                        .padding(.leading)
+                    
+//                    VStack {
+//
+//                        if currentUser.friendsArray.count == 0 {
+//                            Text("Search the Community to find Friends!")
+//                                .font(.system(size: 24))
+//                                .fontWeight(.regular)
+//                                .foregroundColor(Color("red"))
+//                                .padding(.top)
+//                        } else {
+//                            ForEach(currentUser.friendsArray, id: \.username) { friend in
+//                                HStack {
+//                                    Text("\(friend.firstName) \(friend.lastName)")
+//                                        .font(.system(size: 18))
+//                                        .fontWeight(.medium)
+//                                }
+//                                .foregroundColor(Color("white"))
+//                                .padding(10)
+//                                .frame(maxWidth: .infinity)
+//                                .background(Color("red"))
+//                                .cornerRadius(12)
+//                            }
+//                        }
+//                    }
+//                    .padding(.horizontal)
                 }
+                .padding(.bottom, 60)
             }
             
         }

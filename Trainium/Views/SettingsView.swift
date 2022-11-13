@@ -11,6 +11,7 @@ struct SettingsView: View {
     @StateObject var authViewModel: AuthViewModel
     @StateObject var currentUser: CurrentUser
     @StateObject var users: Users
+    @StateObject var groups: Groups
     
     @State private var firstName = ""
     @State private var lastName = ""
@@ -20,7 +21,7 @@ struct SettingsView: View {
     
     var body: some View {
             if goBack {
-                PersonalView(authViewModel: authViewModel, currentUser: currentUser, users: users)
+                PersonalView(authViewModel: authViewModel, currentUser: currentUser, users: users, groups: groups)
             }
             else {
                 setView
