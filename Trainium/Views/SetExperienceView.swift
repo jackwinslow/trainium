@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SetExperienceView: View {
     
-    @State private var selection: String = ""
+    @Binding var selection: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -32,11 +32,11 @@ struct SetExperienceView: View {
     }
 }
 
-struct ExperienceView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetExperienceView()
-    }
-}
+//struct ExperienceView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SetExperienceView()
+//    }
+//}
 
 struct ChoiceView: View {
     

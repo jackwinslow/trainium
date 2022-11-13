@@ -15,11 +15,20 @@ struct TrainiumApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var onBoardRouter = OnBoardRouter.shared
+    @StateObject var authViewModel = AuthViewModel()
     
     var body: some Scene {
         WindowGroup {
-            //OnBoardView(onBoardRouter: onBoardRouter)
-            HomeView()
+            ZStack {
+                if authViewModel.signedIn {
+                    HomeView()
+                } else {
+                    OnBoardView(onBoardRouter: onBoardRouter, authViewModel: authViewModel)
+                }
+            }
+            .onAppear {
+                authViewModel.signedIn = authViewModel.isSignedIn
+            }
         }
     }
 }

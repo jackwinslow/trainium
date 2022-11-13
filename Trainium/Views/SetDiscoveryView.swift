@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SetDiscoveryView: View {
     
-    @State private var selection: String = ""
+    @Binding var selection: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -43,8 +43,8 @@ struct SetDiscoveryView: View {
     }
 }
 
-struct DiscoveryView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetDiscoveryView()
-    }
-}
+//struct DiscoveryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SetDiscoveryView(selection: <#Binding<String>#>)
+//    }
+//}

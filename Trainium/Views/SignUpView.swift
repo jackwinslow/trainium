@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct SetDetailsView: View {
+struct SignUpView: View {
     
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var confirmPassword: String = ""
+    @Binding var firstName: String
+    @Binding var lastName: String
+    @Binding var email: String
+    @Binding var username: String
+    @Binding var password: String
     
     var body: some View {
         VStack {
@@ -82,6 +82,26 @@ struct SetDetailsView: View {
             .padding(.bottom,24)
             
             VStack(alignment: .leading) {
+                Text("Email")
+                    .foregroundColor(Color(0x424B54))
+                    .font(.system(size: 16))
+                    .fontWeight(.medium)
+                
+                TextField("", text: $email)
+                    .frame(height: 35)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .foregroundColor(Color(0xFE2036))
+                    .accentColor(Color(0xFE2036))
+                    .padding(.leading,12)
+                    .overlay(
+                         RoundedRectangle(cornerRadius: 12)
+                             .stroke(Color(0x424B54), lineWidth: 1)
+                    )
+            }
+            .padding(.bottom,24)
+            
+            VStack(alignment: .leading) {
                 Text("Password")
                     .foregroundColor(Color(0x424B54))
                     .font(.system(size: 16))
@@ -99,34 +119,14 @@ struct SetDetailsView: View {
                              .stroke(Color(0x424B54), lineWidth: 1)
                     )
             }
-            .padding(.bottom,24)
-            
-            VStack(alignment: .leading) {
-                Text("Confirm Password")
-                    .foregroundColor(Color(0x424B54))
-                    .font(.system(size: 16))
-                    .fontWeight(.medium)
-                
-                SecureField("", text: $confirmPassword)
-                    .frame(height: 35)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .foregroundColor(Color(0xFE2036))
-                    .accentColor(Color(0xFE2036))
-                    .padding(.leading,12)
-                    .overlay(
-                         RoundedRectangle(cornerRadius: 12)
-                             .stroke(Color(0x424B54), lineWidth: 1)
-                    )
-            }
                         
         }
         .padding(.horizontal, 32)
     }
 }
 
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetDetailsView()
-    }
-}
+//struct SignUpView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SignUpView(firstName: <#Binding<String>#>, lastName: <#Binding<String>#>, email: <#Binding<String>#>, username: <#Binding<String>#>, password: <#Binding<String>#>)
+//    }
+//}
