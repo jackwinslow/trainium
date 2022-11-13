@@ -19,12 +19,13 @@ struct TrainiumApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var currentUser = CurrentUser.shared
     @StateObject var users = Users.shared
+    @StateObject var groups = Groups.shared
     
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if authViewModel.signedIn {
-                    ContentView(viewRouter: viewRouter, authViewModel: authViewModel, currentUser: currentUser, users: users)
+                    ContentView(viewRouter: viewRouter, authViewModel: authViewModel, currentUser: currentUser, users: users, groups: groups)
                 } else {
                     OnBoardView(onBoardRouter: onBoardRouter, authViewModel: authViewModel)
                 }
