@@ -51,6 +51,7 @@
 		34941AE0292093A80074238F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34941ADF292093A80074238F /* SignInView.swift */; };
 		9BA784C42920519600A5DF04 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA784C32920519600A5DF04 /* HomeView.swift */; };
 		9BFCE5D4292064E500D5AD30 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFCE5D3292064E500D5AD30 /* ProfileView.swift */; };
+		9BFCE5D82920AA1400D5AD30 /* ScheduleWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFCE5D72920AA1400D5AD30 /* ScheduleWorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		34941ADF292093A80074238F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9BA784C32920519600A5DF04 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9BFCE5D3292064E500D5AD30 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9BFCE5D72920AA1400D5AD30 /* ScheduleWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				342183F729205C7400F378D2 /* SetExperienceView.swift */,
 				342183F929205CAC00F378D2 /* SetDiscoveryView.swift */,
 				9BA784C32920519600A5DF04 /* HomeView.swift */,
+				9BFCE5D72920AA1400D5AD30 /* ScheduleWorkoutView.swift */,
 				9BFCE5D3292064E500D5AD30 /* ProfileView.swift */,
 			);
 			path = Views;
@@ -291,6 +294,7 @@
 				342183F229204E2900F378D2 /* OnBoardView.swift in Sources */,
 				342183EA2920430700F378D2 /* WelcomeView.swift in Sources */,
 				342183F829205C7400F378D2 /* SetExperienceView.swift in Sources */,
+				9BFCE5D82920AA1400D5AD30 /* ScheduleWorkoutView.swift in Sources */,
 				9BFCE5D4292064E500D5AD30 /* ProfileView.swift in Sources */,
 				342183D92920379000F378D2 /* TrainiumApp.swift in Sources */,
 				34941ADE292091D50074238F /* Button+Extension.swift in Sources */,

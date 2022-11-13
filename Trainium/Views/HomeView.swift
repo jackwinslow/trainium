@@ -83,7 +83,7 @@ struct HomeView: View {
                 
                 
                 
-                Text("Partners")
+                Text("Friends")
                     .font(.system(size: 30))
                     .fontWeight(.bold)
                     .foregroundColor(Color(0x424B54))
