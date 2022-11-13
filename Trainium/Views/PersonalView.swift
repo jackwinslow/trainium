@@ -15,48 +15,133 @@ struct PersonalView: View {
     
     var body: some View {
 //            if goSettings {
-//                SettingsView()
+//                SettingsView(authViewModel: authViewModel, currentUser: currentUser, users: users)
 //            }
 //            else {
 //                profile
 //            }
         
-        Button {
-            authViewModel.signOut()
-        } label: {
-            Text("Sign Out")
-        }
-        .padding(.top, 80)
-        
-        VStack {
-            ForEach(currentUser.friendRequests, id: \.self) { request in
-                HStack {
-                    Text(request)
-                    Spacer()
-                    Button {
-                        users.acceptFriendRequest(requestUser: request)
-                    } label: {
-                        Text("Accept")
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    HStack {
+                        
+                        Spacer()
+                        
+//                        NavigationLink(destination: SettingsView(authViewModel: authViewModel, currentUser: currentUser, users: users)) {
+//                            Image(systemName: "gearshape")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 30)
+//                                .foregroundColor(Color("black"))
+//                                .padding(.trailing)
+//                                .padding(.top)
+//                        }
+                        
+                        Button {
+                            authViewModel.signOut()
+                        } label: {
+                            Text("Sign Out")
+                                .foregroundColor(Color("black"))
+                                .padding(.trailing)
+                                .padding(.top)
+                        }
+
+
                     }
                     
-                    Button {
-                        users.declineFriendRequest(requestUser: request)
-                    } label: {
-                        Text("Decline")
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .frame(width:100, height: 100)
+                        .foregroundColor(Color("black"))
+                    
+                    Text("\(currentUser.firstName) \(currentUser.lastName)")
+                        .font(.system(size: 32))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("black"))
+                        .padding(.bottom,32)
+                    
+                    Text("Friend Requests")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.system(size: 24))
+                        .fontWeight(.regular)
+                        .foregroundColor(Color("black"))
+                        .padding(.leading)
+                    
+                    VStack {
+                        
+                        if currentUser.friendRequests.count == 0 {
+                            Text("No Current Requests")
+                                .font(.system(size: 24))
+                                .fontWeight(.regular)
+                                .foregroundColor(Color("red"))
+                                .padding(.top)
+                        } else {
+                            ForEach(currentUser.friendRequests, id: \.self) { request in
+                                HStack {
+                                    Text(request)
+                                        .font(.system(size: 18))
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    
+                                    Button {
+                                        users.acceptFriendRequest(requestUser: request)
+                                    } label: {
+                                        Text("Accept")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                    }
+                                    
+                                    Button {
+                                        users.declineFriendRequest(requestUser: request)
+                                    } label: {
+                                        Text("Decline")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                    }
+                                }
+                                .foregroundColor(Color("white"))
+                                .padding(10)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("red"))
+                                .cornerRadius(12)
+                            }
+                        }
                     }
-
+                    .padding([.horizontal, .bottom])
+                    
+                    Text("Friends")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.system(size: 24))
+                        .fontWeight(.regular)
+                        .foregroundColor(Color("black"))
+                        .padding(.leading)
+                    
+                    VStack {
+                        
+                        if currentUser.friendsArray.count == 0 {
+                            Text("Search the Community to find Friends!")
+                                .font(.system(size: 24))
+                                .fontWeight(.regular)
+                                .foregroundColor(Color("red"))
+                                .padding(.top)
+                        } else {
+                            ForEach(currentUser.friendsArray, id: \.username) { friend in
+                                HStack {
+                                    Text("\(friend.firstName) \(friend.lastName)")
+                                        .font(.system(size: 18))
+                                        .fontWeight(.medium)
+                                }
+                                .foregroundColor(Color("white"))
+                                .padding(10)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("red"))
+                                .cornerRadius(12)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
                 }
             }
-        }
-        
-        VStack {
-            ForEach(currentUser.friends, id: \.self) { request in
-                HStack {
-                    Text(request)
-
-                }
-            }
-        }
             
         }
     

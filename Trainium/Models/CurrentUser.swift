@@ -62,6 +62,8 @@ class CurrentUser: ObservableObject {
         email = ""
         experienceLevel = ""
         discoverable = false
+        friends = []
+        friendRequests = []
         
         completed()
     }

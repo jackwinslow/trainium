@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @StateObject var authViewModel: AuthViewModel
+    @StateObject var currentUser: CurrentUser
+    @StateObject var users: Users
+    
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var username = ""
@@ -16,7 +20,7 @@ struct SettingsView: View {
     
     var body: some View {
             if goBack {
-//                ProfileView(authViewModel: )
+                PersonalView(authViewModel: authViewModel, currentUser: currentUser, users: users)
             }
             else {
                 setView
@@ -145,8 +149,8 @@ struct SettingsView: View {
     }
 }
 
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct Settings_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//    }
+//}
