@@ -23,7 +23,7 @@ struct ContentView: View {
             
             switch viewRouter.currentPage {
             case .home:
-                HomeView(currentUser: currentUser)
+                HomeView(viewRouter: viewRouter, currentUser: currentUser)
             case .community:
                 CommunityView(users: users)
             case .personal:

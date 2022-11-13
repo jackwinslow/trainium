@@ -10,6 +10,7 @@ import SwiftUI
 struct ScheduleWorkoutView: View {
     
     @StateObject var currentUser = CurrentUser.shared
+    @StateObject var viewRouter: ViewRouter
     
     @State var goBack = false
     @State private var date = Date()
@@ -19,7 +20,7 @@ struct ScheduleWorkoutView: View {
     
     var body: some View {
             if goBack {
-                HomeView(currentUser: CurrentUser.shared)
+                HomeView(viewRouter: viewRouter, currentUser: CurrentUser.shared)
             }
             else {
                 Schedule
@@ -184,8 +185,8 @@ struct ScheduleWorkoutView: View {
     }
 }
 
-struct ScheduleWorkoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleWorkoutView()
-    }
-}
+//struct ScheduleWorkoutView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleWorkoutView()
+//    }
+//}
